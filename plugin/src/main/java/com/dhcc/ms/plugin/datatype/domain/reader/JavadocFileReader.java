@@ -24,8 +24,8 @@ public class JavadocFileReader implements JavadocReader {
 		this.charset = charset;
 	}
 
-	private String rootDatatypePageAbsolutePath(File javadocFile) throws MalformedURLException {
-		return "jar:file:/" + javadocFile.getAbsolutePath() + "!/" + rootDatatypePagePath;
+	private String rootDatatypePageAbsolutePath(File javadocFile) throws IOException {
+		return "jar:" + javadocFile.toURI() + "!/" + rootDatatypePagePath;
 	}
 
 	@Override
